@@ -1,0 +1,93 @@
+body{
+   /* background-image: url('https://pi-dogs-brown.vercel.app/static/media/FONDO.efc82cc9.png'); */
+    background-image:url('https://img.freepik.com/vector-gratis/patrones-fisuras-cosas-perro-collar-cuenco-bolas-huesos-huellas-recompensa_100959-76.jpg') ; 
+    /* background-image:url("https://previews.123rf.com/images/tigatelu/tigatelu1701/tigatelu170100016/69363160-ilustraci%C3%B3n-de-conjunto-de-divertidos-perros-de-dibujos-animados.jpg") ; */
+}
+
+.Cardshijo{
+    display: grid;
+    height: 800px;
+    width: 100%;
+    margin-bottom: 5%;
+    gap: 5%;
+    grid-template-columns: repeat(4, 1fr);
+ 
+   
+}
+.card{
+     border-width: 10px;
+     border-width: 1px;
+     margin: 5px;
+     border-radius: 5px; 
+       background-color:rgb(255, 195, 142);
+       margin-bottom: 5px;
+       text-decoration: none;
+       box-shadow: rgb(0 0 0 / 40%) 4px 4px 4px 2px;
+       border-radius: 30px;
+       width: 300px;
+    height: 350px;
+}
+.Cards{
+    display: flex;
+    justify-content: space-around;
+    grid-template-columns: repeat(4, 1fr);
+    margin:30px;
+}
+.cardhijo{
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+}
+
+.filtrosNav{
+    display: flex;
+    justify-content:left;
+    background-color: rgb(163, 82, 44);
+    box-shadow:rgb(0, 0, 0) 0px 3px;
+    height: 70px;
+    align-items: center;
+
+}
+.crearPerro{
+    margin: 10px;
+    box-shadow:rgb(153 153 153) 0px 5px;
+    padding: 5px;
+    border-radius: 10px;
+    background-color: navajowhite;
+    text-decoration: none;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+.crearperro{
+    text-decoration: none;
+    color: black;
+}
+.refresh{
+    margin: 10px;
+    box-shadow:rgb(153 153 153) 0px 5px;
+    padding: 5px;
+    border-radius: 10px;
+    background-color:navajowhite;
+    border-style: none;
+}
+.ordenNombre{
+    margin: 10px;
+    box-shadow:rgb(153 153 153) 0px 5px;
+    padding: 5px;
+    border-radius: 10px;
+    background-color: navajowhite;
+    border-style: none;
+}
+.ordenPeso{
+    margin: 10px;
+    box-shadow:rgb(153 153 153) 0px 5px;
+    padding: 5px;
+    border-radius: 10px;
+    background-color: navajowhite;
+    border-style: none;
+}
+.paginado{
+    padding: 5px;
+    background-color:rgb(163, 82, 44);
+    border-style: none;
+}

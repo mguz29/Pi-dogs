@@ -1,0 +1,22 @@
+.divimagen{
+    width: 250px;
+    height: 180px;
+    border-radius: 30px;
+    margin-top: 20px;
+    margin-left: 27px;
+    
+}
+.imagen{
+    border-radius: 20px;
+    box-shadow: rgb(0 0 0 / 30%) 3px 3px 3px 1px;
+}
+.divnombre{
+    text-decoration: none;
+}
+.nombre{
+    margin: 2px;
+    text-decoration: none;
+}
+.peso{
+    margin: 5px;
+}
