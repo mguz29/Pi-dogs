@@ -14,20 +14,34 @@ module.exports = (sequelize) => {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    altura:{
+    altura_min:{
       type: DataTypes.INTEGER,
       allowNull:false
     },
-    peso:{
+    altura_max:{
       type:DataTypes.INTEGER,
       allowNull:false
     },
-    AñosDeVida:{
+    peso_min:{
+      type:DataTypes.INTEGER,
+      allowNull:false
+    },
+    peso_max:{
+      type:DataTypes.INTEGER,
+      allowNull:false
+    },
+    AñosDeVida_max:{
       type:DataTypes.INTEGER
     },
-    // createID:{
-    //   type:DataTypes.BOOLEAN,
-    //   defaultValue:true
-    // }
+    AñosDeVida_min:{
+      type:DataTypes.INTEGER
+    },
+    criado_para:{
+      type:DataTypes.STRING
+    },
+    createID:{
+      type:DataTypes.BOOLEAN,
+      defaultValue:true
+    }
   });
 };

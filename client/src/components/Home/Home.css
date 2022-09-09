@@ -1,0 +1,136 @@
+.Cardshijo {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.Container {
+    background-image: url('../../Imagenes/FONDO2.png');
+}
+
+:root {
+    /* --color-dark: rgb(232, 202, 202); */
+    --color-dark: rgb(232 218 202);
+    --color-button: white
+}
+
+.card {
+    border-width: 10px;
+    border-width: 1px;
+    margin: 25px;
+    border-radius: 5px;
+    background-color: var(--color-dark) !important;
+    margin-bottom: 5px;
+    text-decoration: none;
+    box-shadow: rgb(0 0 0 / 40%) 4px 4px 4px 2px;
+    border-radius: 30px;
+    height: 350px;
+    transition: all .2s ease-in-out;
+}
+
+.Cards {
+    display: flex;
+    justify-content: space-around;
+    grid-template-columns: repeat(4, 1fr);
+    margin: 30px;
+}
+
+.cardhijo {
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+}
+
+.filtrosNav {
+    display: flex;
+    justify-content: left;
+    background-color: var(--color-dark);
+    box-shadow: rgb(0, 0, 0) 0px 3px;
+    height: 70px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.crearPerro {
+    margin: 10px;
+    /* box-shadow: rgb(153 153 153) 0px 5px; */
+    padding: 7px;
+    border-radius: 10px;
+    background-color: var(--color-button);
+    text-decoration: none;
+    font-size: 15px;
+    margin-bottom: 10px;
+    text-decoration: none;
+}
+
+.crearperro {
+    text-decoration: none;
+    color: black;
+}
+
+.refresh {
+    margin: 10px;
+    /* box-shadow: rgb(153 153 153) 0px 5px; */
+    padding: 7px;
+    border-radius: 10px;
+    background-color: var(--color-button);
+    border-style: none;
+}
+
+.ordenNombre {
+    margin: 10px;
+    /* box-shadow: rgb(153 153 153) 0px 5px; */
+    padding: 7px;
+    border-radius: 10px;
+    background-color: var(--color-button);
+    border-style: none;
+}
+
+.ordenPeso {
+    margin: 10px;
+    padding: 7px;
+    border-radius: 10px;
+    background-color: var(--color-button);
+    border-style: none;
+}
+
+.paginado {
+    padding: 5px;
+
+    border-style: none;
+}
+
+.footer {
+    background-color: var(--color-dark);
+}
+
+.card:hover {
+    transform: scale(1.1);
+    box-shadow: rgb(0 0 0 / 40%) 4px 4px 4px 2px;
+}
+
+.Select {
+    display: flex;
+    margin-left: 100px;
+    align-items: center;
+}
+
+.NAVSs {
+    background-color: var(--color-dark);
+}
+
+.ConatinerPaginado {
+    /* background-color: black;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* height: 20px; */
+
+}
+
+.Container {
+    /* height: 100vh;
+    background-image:url('https://img.freepik.com/vector-gratis/patrones-fisuras-cosas-perro-collar-cuenco-bolas-huesos-huellas-recompensa_100959-76.jpg') ; 
+    background-size: 100% 100%;*/
+}

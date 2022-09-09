@@ -1,0 +1,51 @@
+.containerPag {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.containerPag ul {
+  padding: 0;
+  margin: 0.5rem;
+}
+.containerPag ul .pagButton,
+.containerPag ul .disable {
+  margin: 5px;
+  font-family: "Trebuchet MS", sans-serif;
+  font-size: 22px;
+  background-color:  var(--color-dark) !important;
+  color: rgb(39, 39, 39);
+  padding: 8px;
+  outline: none;
+  border: 1px solid black;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.containerPag ul .disable {
+  background-color: #241511;
+  cursor: default;
+}
+.paginate ul {
+  display: flex;
+  list-style-type: none;
+  justify-content: center;
+}
+.paginate ul li {
+  padding: 0 0.3rem;
+}
+.paginate ul li h5 {
+  font-size: 20px;
+  color: #000000;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 0;
+}
+.paginate ul li h5:hover {
+  color: #7e695a;
+  cursor: pointer;
+}
+.currentPage {
+  color: #705542;
+}
+.currentPage h5 {
+  background-color: #c9c9c9;
+}
