@@ -21,10 +21,9 @@
     margin: 25px;
     border-radius: 5px;
     background-color: var(--color-dark) !important;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
     text-decoration: none;
     box-shadow: rgb(0 0 0 / 40%) 4px 4px 4px 2px;
-    border-radius: 30px;
     height: 350px;
     transition: all .2s ease-in-out;
 }

@@ -3,7 +3,7 @@ import Swal from 'sweetalert2'
 
 export function GetDogs() {
     return async function (dispatch) {
-        var json = await axios.get("http://localhost:3001/dogs",{
+        var json = await axios.get("/dogs",{
         })
             return dispatch({
             type:    'GET_DOGS',
@@ -14,7 +14,7 @@ export function GetDogs() {
 
 export function GetTemp() {
     return async function (dispatch) {
-        var json = await axios.get("http://localhost:3001/temperament")
+        var json = await axios.get("/temperament")
             return dispatch({
             type:    'GET_TEMP',
             payload: json.data
@@ -57,7 +57,7 @@ export function filterByTemp(payload) {
 export function GetNameDogs(payload) {
     return async function (dispatch) {
     try {
-        var json = await axios.get(`http://localhost:3001/dogss?name=${payload}`)
+        var json = await axios.get(`/dogss?name=${payload}`)
             return dispatch({
             type:    'GET_NAME_DOGS',
             payload: json.data
@@ -81,7 +81,7 @@ export function GetNameDogs(payload) {
 export function GetDogsId(id) {
     return async function (dispatch) {
     try {
-        var json = await axios.get(`http://localhost:3001/dogs/${id}`)
+        var json = await axios.get(`/dogs/${id}`)
             return dispatch({
             type:    'GET_ID',
             payload: json.data
