@@ -52,7 +52,6 @@ function CArd({
                 }
               })
             : temperamento }
-
         </Card.Text>
         </div>
 
