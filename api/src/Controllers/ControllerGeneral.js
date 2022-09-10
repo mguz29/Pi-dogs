@@ -21,7 +21,7 @@ const getApiInfo = async () => {
             peso_max: d.weight.metric.split(" - ")[1] && d.weight.metric.split(" - ")[1],
             peso_min: d.weight.metric.split(" - ")[0] && d.weight.metric.split(" - ")[0],
             añosDeVida: d.life_span,
-            Temperamento:d.temperament? d.temperament.split(', ') :["Temperamento no encontrado"],
+            temperamento:d.temperament? d.temperament.split(', ') :["Temperamento no encontrado"],
             imagen:d.image.url,
             criado_para:d.bred_for
         }
@@ -31,15 +31,27 @@ const getApiInfo = async () => {
 
 }
 
-
 const getDbInfo = async () => {
-  return await Dog.findAll({
-      includes:{
-          model:Temperamento,
-          attributes:['name'],
-          through:{attributes: [],}
+  const todos = await Dog.findAll({include:Temperamento})
+  console.log(todos)
+  const dogsDb = todos.map(el=>{
+      return {
+        id:el.id,
+        nombre:el.nombre,
+        altura_min:el.altura_min,
+        altura_max:el.altura_max,
+        peso_min:el.peso_min,
+        peso_max:el.peso_max,
+        AñosDeVida_max:el.AñosDeVida_max,
+        AñosDeVida_min:el.AñosDeVida_min,
+        criado_para:el.criado_para,
+        imagen:el.imagen,
+        temperamento:el.temperamentos?.map(e=>e.nombre),
+        createdInDb:el.createdInDb
       }
+        
   })
+  return dogsDb
 }
 
 

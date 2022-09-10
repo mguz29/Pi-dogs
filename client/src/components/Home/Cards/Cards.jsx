@@ -9,6 +9,7 @@ import Footer from '../../Footer/Footer';
 export default function Cards() {
     const dispatch = useDispatch();
     const allDogsss = useSelector((state) => state.dogs);
+    
   
     let page = useSelector((state) => state.page);
     const dogsPerPage = 8;
@@ -16,7 +17,7 @@ export default function Cards() {
     let lastIndex = page * dogsPerPage; //indice incial para metodo slice
     let firstIndex = lastIndex - dogsPerPage; //indice final para metodo slice
     let currentDogs = allDogsss.slice(firstIndex, lastIndex); //metodo slice para determinar del array los libros a mostrar por pagina
-  
+  console.log(currentDogs)
     const limitPage = Math.ceil(allDogsss.length / dogsPerPage);
   
     let firstPrevControl = false; //control de botones, deshabilita cuando es imposible la ejecución
@@ -58,7 +59,7 @@ export default function Cards() {
                 nombre={el.nombre}
                 peso_max={el.peso_max}
                 peso_min={el.peso_min}
-                Temperamento={el.Temperamento}
+                temperamento={el.temperamento}
                 criado_para={el.criado_para}
               />
             </div>

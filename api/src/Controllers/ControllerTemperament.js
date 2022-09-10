@@ -38,6 +38,19 @@ const getTemperamentos = async (req, res, next) => {
 
   }
 
+
+  const getTemperamento = async (req, res, next) => {
+    const response = await axios(`https://api.thedogapi.com/v1/breeds?api_key=${API_KEY}`)
+       let temperamentos = response.data.map((el) => el.temperament).join(",").split(",")
+       temperamentos.forEach(e => {
+         if (e) {
+             Temperamento.findOrCreate({
+               where:{nombre:e}
+           })
+         }
+       });
+
+  }
+
   module.exports = {
-    getTemperamentos
-}
+    getTemperamentos, getTemperamento}

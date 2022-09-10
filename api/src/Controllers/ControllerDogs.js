@@ -32,25 +32,46 @@ const dogCreate = async (req, res, next) => {
     const {
         id,
         nombre,
-        altura,
-        peso,
-        añosDeVida,
+        altura_min,
+        altura_max,
+        peso_min,
+        peso_max,
+        AñosDeVida_max,
+        AñosDeVida_min,
+        criado_para,
+        imagen,
         temperamento
 
     } = req.body
+    console.log( id,
+        nombre,
+        altura_min,
+        altura_max,
+        peso_min,
+        peso_max,
+        AñosDeVida_max,
+        AñosDeVida_min,
+        criado_para,
+        Temperamento)
 
     let dogCreated= await Dog.create({
-        id,
         nombre,
-        altura,
-        peso,
-        añosDeVida
+        altura_min,
+        altura_max,
+        peso_min,
+        peso_max,
+        AñosDeVida_max,
+        AñosDeVida_min,
+        criado_para,
+        imagen,
+        temperamento
     })
      let temperamentoDb = await Temperamento.findAll({
-         where: { name : temperamento}
+         where: { nombre : temperamento}
      })
-     dogCreated.addType(temperamentoDb) // metodo de SQL que lo que hace es traerme de la tabla lo que le pido por parametro
-    res.send('Receta Dog correctamente')
+     console.log(temperamentoDb)
+     dogCreated.addTemperamento(temperamentoDb) // metodo de SQL que lo que hace es traerme de la tabla lo que le pido por parametro
+    res.send('Dog create')
 
 
 }
@@ -69,6 +90,19 @@ const dogsId =  async (req, res, next) => {
     }
 }
 
+const DeleteDogs = async (req, res)=>{
+    const {id} = req.params
+     if (/^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(id)){
+        const deleteDog = await Dog.destroy({
+            where:{id:id}
+        })
+        res.send('Dog has been delete')
+    }else{
+        res.send('Cant remove dogs from api')
+    }
+
+}
+
 module.exports = {
-    getAlls,getDogName,dogsId
+    getAlls,getDogName,dogsId, DeleteDogs, dogCreate
 }

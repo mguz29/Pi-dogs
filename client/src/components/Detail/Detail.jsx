@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useParams, Link } from 'react-router-dom'
 import { GetDogsId, SetDogDetail} from '../../actions';
 import Loading from '../Loading/Loading';
-import NavScrollExample from '../Navbar/Nav';
+import NavDetail from '../Navbar/NavBar2/navBar';
 import style from './Detail.module.css'
 import Hearth from "../../Imagenes/Temp.png";
 import bascula from "../../Imagenes/bascula.png";
@@ -29,7 +29,7 @@ export default function Detail() {
   return (
     <div className={style.DetailContainer}>
       <div>
-        <NavScrollExample/>
+        <NavDetail/>
       </div>
       
          {/* <nav className='nav'>
@@ -45,7 +45,7 @@ export default function Detail() {
         {
             dog.length> 0 ?
             <div className={style.ContainerDetail}>
-            <div><img src={dog[0].imagen} className={style.image} /> </div>
+            <div className={style.ImgContainer}><img src={dog[0].imagen} className={style.image} /> </div>
             <div className={style.data}>
 
                 <h1 style={{fontWeight: 'bold'}}>{dog[0].nombre}</h1>
@@ -79,7 +79,7 @@ export default function Detail() {
 
                 <div className={style.containerInfo}>
                 <img className={style.pin} src={enojado}/>
-                  <h5><span style={{fontWeight: 'bold'}}>Temperament: </span> {dog[0].Temperamento.join(', ')}</h5>
+                  <h5 style={{width:'75%'}}><span style={{fontWeight: 'bold'}}>Temperament: </span> {dog[0].Temperamento? dog[0].Temperamento.join(', ') : 'Not Found'}</h5>
                 </div>
             </div>
             </div>

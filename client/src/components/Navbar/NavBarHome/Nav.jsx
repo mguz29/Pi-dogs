@@ -3,17 +3,16 @@ import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Link } from "react-router-dom";
 
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import React from "react";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
-import { GetDogs, GetTemp, OrderByName, OrderByWeith } from "../../actions";
+import { GetDogs, GetTemp, OrderByName, OrderByWeith, setPage } from "../../../actions/index";
 
-import Filters from '../Home/Filters/Filters';
-import SearchBar from '../SearchBar/SearchBar';
+import Filters from '../../Home/Filters/Filters';
+import SearchBar from '../../SearchBar/SearchBar';
 
 function NavScrollExample({ setOrden }) {
   const dispatch = useDispatch();
@@ -25,6 +24,7 @@ function NavScrollExample({ setOrden }) {
     if (e.target.value !== "All") {
       dispatch(OrderByName(e.target.value));
       setOrden(`Ordenado ${e.target.value}`);
+      dispatch(setPage(1))
     } else {
       dispatch(GetDogs());
       setOrden(e.target.value);
@@ -36,6 +36,7 @@ function NavScrollExample({ setOrden }) {
     if (e.target.value !== "All") {
       dispatch(OrderByWeith(e.target.value));
       setOrden(`Ordenado ${e.target.value}`);
+      dispatch(setPage(1))
     } else {
       dispatch(GetDogs());
       setOrden(e.target.value);

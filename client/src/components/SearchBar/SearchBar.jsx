@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { GetNameDogs } from "../../actions";
+import { GetNameDogs, setPage } from "../../actions";
 import style from "../SearchBar/SearchBar.module.css";
 import Swal from "sweetalert2";
 
@@ -20,6 +20,7 @@ export default function SearchBar() {
     if (dog) {
       if (e.key === "Enter" || e.type === "click") {
         dispatch(GetNameDogs(dog));
+        dispatch(setPage(1))
        
       }
     } else {

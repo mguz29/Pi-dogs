@@ -10,7 +10,7 @@ function CArd({
   peso_max,
   peso_min,
   imagen,
-  Temperamento,
+  temperamento,
   id,
 }) {
   return (
@@ -45,13 +45,15 @@ function CArd({
           }}>
         <Card.Img src={Hearth} style={{ width: "30px", marginRight: "8px" }}/>
         <Card.Text>
-          {Temperamento.length >= 3
-            ? Temperamento.map((e, i) => {
+          {temperamento.length !== 0 ?
+          temperamento.length >= 3
+            ? temperamento.map((e, i) => {
                 if (i < 3) {
                   return <span> {e}, </span>;
                 }
               })
-            : Temperamento}
+            : temperamento : 'Not found'}
+
         </Card.Text>
         </div>
 

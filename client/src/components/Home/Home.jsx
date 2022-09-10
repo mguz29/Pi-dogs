@@ -4,7 +4,7 @@ import "./Home.css";
 import SearchBar from "../SearchBar/SearchBar";
 import Cards from "../Home/Cards/Cards";
 // import NavBar from "../Navbar/navBar";
-import NavScrollExample from "../Navbar/Nav";
+import NavScrollExample from "../Navbar/NavBarHome/Nav";
 
 export default function Home() {
   const [order, setOrden] = useState("");

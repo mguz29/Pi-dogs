@@ -39,6 +39,9 @@ module.exports = (sequelize) => {
     criado_para:{
       type:DataTypes.STRING
     },
+    imagen:{
+      type:DataTypes.STRING
+    },
     createID:{
       type:DataTypes.BOOLEAN,
       defaultValue:true
