@@ -118,3 +118,17 @@ export function setPage(num) {
       }
     };
   }
+
+  export function postDogs(payload) {
+    console.log(payload)
+    return async function (dispatch) {
+        try {
+            const response = (await (axios.post('/dog', payload)))
+            return response
+        } catch (error) {
+            if (error.response) alert(error.response.data)
+        }
+    }
+
+
+}

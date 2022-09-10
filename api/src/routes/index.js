@@ -13,10 +13,10 @@ const router = Router();
 // Ejemplo: router.use('/auth', authRouter);
 
 router.get('/dogs', getAlls)
-router.delete('/dog/:id', DeleteDogs)
 router.post('/dog', dogCreate)
 router.get('/dogss', getDogName)
 router.get('/temperament', getTemperamentos)
+router.delete('/dog/:id', DeleteDogs)
 router.get('/dogs/:id', dogsId)
 
 

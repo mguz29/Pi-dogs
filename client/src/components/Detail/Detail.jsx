@@ -69,7 +69,7 @@ export default function Detail() {
                 <div className={style.containerInfo}>
                 <img className={style.pin} src={Hearth}/>
                 <h5><span style={{fontWeight: 'bold'}}>Life: </span>
-                   {dog[0].añosDeVida}</h5>
+                   {dog[0].añosDeVida} Years</h5>
                 </div>
 
                 <div className={style.containerInfo}>
@@ -79,7 +79,7 @@ export default function Detail() {
 
                 <div className={style.containerInfo}>
                 <img className={style.pin} src={enojado}/>
-                  <h5 style={{width:'75%'}}><span style={{fontWeight: 'bold'}}>Temperament: </span> {dog[0].Temperamento? dog[0].Temperamento.join(', ') : 'Not Found'}</h5>
+                  <h5 style={{width:'75%'}}><span style={{fontWeight: 'bold'}}>Temperament: </span> {dog[0].temperamento? dog[0].temperamento.join(', ') : 'Not Found'}</h5>
                 </div>
             </div>
             </div>
