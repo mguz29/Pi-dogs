@@ -3,7 +3,13 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useParams, Link } from 'react-router-dom'
 import { GetDogsId, SetDogDetail} from '../../actions';
 import Loading from '../Loading/Loading';
-import Nav from '../Navbar/Nav';
+import NavScrollExample from '../Navbar/Nav';
+import style from './Detail.module.css'
+import Hearth from "../../Imagenes/Temp.png";
+import bascula from "../../Imagenes/bascula.png";
+import regla from "../../Imagenes/gobernante.png";
+import enojado from "../../Imagenes/enojado.png";
+import perro from "../../Imagenes/perro.png";
 
 
 export default function Detail() {
@@ -21,35 +27,66 @@ export default function Detail() {
     }, [dispatch])
     
   return (
-    <div>
-      <Nav/>
-         <nav className='nav'>
-        < Link to='/Home'>
-          <button className='Button'>Volver</button>
-        </Link>
-        {/* <Link to='/Home'>
-          <img src={dog[0].imagen} className="images" />
-        </Link> */}
+    <div className={style.DetailContainer}>
+      <div>
+        <NavScrollExample/>
+      </div>
+      
+         {/* <nav className='nav'>
+         <Link to='/Home'>
+          <img src={dog[0]?.imagen} className="images" />
+        </Link> 
 
-        {/* <img className='imagess' src={dog.length ? dog[0].imagen : 'Cargando'} /> */}
-      </nav>
+         <img className='imagess' src={dog.length ? dog[0].imagen : 'Cargando'} /> 
+      </nav> */}
+
+      <div className={style.bodyDetail}>
 
         {
             dog.length> 0 ?
-            <div>
-            <div><img src={dog[0].imagen} width='300px'/> </div>
-            <div>
-                <h1>{dog[0].nombre}</h1>
-                <h1>{dog[0].altura}</h1>
-                <h1>Peso : {dog[0].peso_min} - {dog[0].peso_max} Kg</h1>
-                <h1>Altura : {dog[0].altura_min} - {dog[0].altura_max} Cm</h1>
-                <h1>Esperanza de vida: {dog[0].añosDeVida}</h1>
-                <h1>Temperamentos : {dog[0].Temperamento.toString()}</h1>
-            </div>
-            </div>
+            <div className={style.ContainerDetail}>
+            <div><img src={dog[0].imagen} className={style.image} /> </div>
+            <div className={style.data}>
 
+                <h1 style={{fontWeight: 'bold'}}>{dog[0].nombre}</h1>
+            <div className={style.textDetail}>
+
+                <div className={style.containerInfo}>
+                <img className={style.pin} src={bascula}/>
+                <h5>
+                  <span style={{fontWeight: 'bold'}}>Weight: </span>
+                  {dog[0].peso_min} - {dog[0].peso_max} Kg
+                </h5>
+                </div>
+
+                <div className={style.containerInfo}>
+                <img className={style.pin}src={regla}/>
+                  <h5> <span style={{fontWeight: 'bold'}}>Height: </span>
+                    {dog[0].altura_min} - {dog[0].altura_max} Cm
+                  </h5>
+                </div>
+
+                <div className={style.containerInfo}>
+                <img className={style.pin} src={Hearth}/>
+                <h5><span style={{fontWeight: 'bold'}}>Life: </span>
+                   {dog[0].añosDeVida}</h5>
+                </div>
+
+                <div className={style.containerInfo}>
+                <img className={style.pin} src={perro}/>
+                  <h5><span style={{fontWeight: 'bold'}}>Bred for: </span> {dog[0].criado_para}</h5>
+                </div>
+
+                <div className={style.containerInfo}>
+                <img className={style.pin} src={enojado}/>
+                  <h5><span style={{fontWeight: 'bold'}}>Temperament: </span> {dog[0].Temperamento.join(', ')}</h5>
+                </div>
+            </div>
+            </div>
+            </div>
             :<Loading/>
         }
+      </div>
     </div>
   )
 }

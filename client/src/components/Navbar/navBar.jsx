@@ -1,16 +1,35 @@
-import React from 'react'
-import Filters from '../Home/Filters/Filters'
-import SearchBar from '../SearchBar/SearchBar'
-import './navBar.css'
-export default function NavBar({setOrden}) {
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
+import { Link } from "react-router-dom";
+
+function NavDetail() {
   return (
-    <div className='NavbarCo'>
-        <div>
-            <Filters setOrden={setOrden}/>
-        </div>
-        <div><SearchBar/></div>
-        
-        
-    </div>
-  )
+    <>
+      <Navbar bg="dark" variant="dark">
+        <Container>
+          <Navbar.Brand href="#home">Navbar</Navbar.Brand>
+          <Nav className="me-auto">
+            <Nav.Link href="#home">
+              <div className="crearPerro">
+                <Link to="/dog" className="crearperro">
+                  Home
+                </Link>
+              </div>
+            </Nav.Link>
+            <Nav.Link href="#features">
+              <div className="crearPerro">
+                <Link to="/dog" className="crearperro">
+                  Home
+                </Link>
+              </div>
+            </Nav.Link>
+            <Nav.Link href="#pricing">Pricing</Nav.Link>
+          </Nav>
+        </Container>
+      </Navbar>
+    </>
+  );
 }
+
+export default NavDetail;
