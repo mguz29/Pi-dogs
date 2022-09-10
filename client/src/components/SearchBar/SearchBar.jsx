@@ -5,21 +5,22 @@ import style from "../SearchBar/SearchBar.module.css";
 import Swal from "sweetalert2";
 
 export default function SearchBar() {
-  const [dog, setDog] = useState("");
+  const [search, setSearch] = useState("");
   const [msg, setMsg] = useState("");
   const dispatch = useDispatch();
   const Dog = useSelector((state) => state.dogs);
 
   function handleInputChange(e) {
     e.preventDefault();
-    setDog(e.target.value);
+    setSearch(e.target.value);
   }
 
   function handleSearch(e) {
     e.preventDefault();
-    if (dog) {
+    if (search) {
       if (e.key === "Enter" || e.type === "click") {
-        dispatch(GetNameDogs(dog));
+        dispatch(GetNameDogs(search));
+        setSearch("")
         dispatch(setPage(1))
        
       }
@@ -39,7 +40,7 @@ export default function SearchBar() {
         <div>
           <input
             className={style.input}
-            value={dog}
+            value={search}
             type="text"
             placeholder="Example: Husky"
             onChange={(e) => handleInputChange(e)}

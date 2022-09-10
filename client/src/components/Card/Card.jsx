@@ -45,14 +45,13 @@ function CArd({
           }}>
         <Card.Img src={Hearth} style={{ width: "30px", marginRight: "8px" }}/>
         <Card.Text>
-          {temperamento.length !== 0 ?
-          temperamento.length >= 3
+          {temperamento.length >= 3
             ? temperamento.map((e, i) => {
                 if (i < 3) {
                   return <span> {e}, </span>;
                 }
               })
-            : temperamento : 'Not found'}
+            : temperamento }
 
         </Card.Text>
         </div>
