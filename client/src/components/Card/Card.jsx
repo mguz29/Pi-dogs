@@ -4,6 +4,7 @@ import Card from "react-bootstrap/Card";
 import { Link } from "react-router-dom";
 import Hearth from "../../Imagenes/Temp.png";
 import bascula from "../../Imagenes/bascula.png";
+import style from './card.module.css'
 function CArd({
   criado_para,
   nombre,
@@ -28,21 +29,16 @@ function CArd({
         <h1> Cargbando</h1>
       )}
       <Card.Body>
-        <Card.Title style={{ fontSize: "1.4rem" }}>{nombre}</Card.Title>
+        <Card.Title className={style.tittle}>{nombre}</Card.Title>
         <div
-          style={{display: "flex",alignItems: "center",justifyContent: "center",marginBottom: "10px",}}
+         className={style.divCo}
         >
-          <Card.Img style={{ width: "30px", marginRight: "8px" }} src={bascula} />
+          <Card.Img   style={{ width: "30px", marginRight: "8px" }} src={bascula} />
           <Card.Text>
-          {peso_min ? peso_min : 'Not Found'} - {peso_max ? peso_max : 'Not Found'} KG
+          Weight: {peso_min ? peso_min : 'Not Found'} - {peso_max ? peso_max : 'Not Found'} KG
           </Card.Text>
         </div>
-        <div style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            marginBottom: "10px",
-          }}>
+        <div className={style.divCo}>
         <Card.Img src={Hearth} style={{ width: "30px", marginRight: "8px" }}/>
         <Card.Text>
           {temperamento.length >= 3
@@ -56,12 +52,7 @@ function CArd({
         </div>
 
         <Link to={`/Dogs/${id}`}>
-          <Button
-            style={{ color: "black", border: "solid black 1px" }}
-            variant="outline-light"
-          >
-            Detalle
-          </Button>
+          <Button className={style.Detail}> Detalle</Button>
         </Link>
       </Card.Body>
     </Card>

@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import style from './DogCreate.module.css'
 import { GetTemp, postDogs } from '../../actions';
+import CardCreate from '../Card/CardCreate/CardCreate';
+import NavDetail from '../Navbar/NavBar2/navBar';
 
 export default function DogCreate() {
     const dispatch = useDispatch()
@@ -120,21 +122,21 @@ export default function DogCreate() {
 
     return (
         <div className={style.container}>
-            <nav className={style.nav}>
-                <Link to='/home'>
-                    <button className={style.navBo}> Volver</button>
-                </Link>
-            </nav>
-
+            <NavDetail/>
             <div className={style.formulario}>
-                <h1>Create your dog</h1>
 
-                <form onSubmit={e => handleSubmit(e)}>
+            <div className={style.FormularioT}>
+          
+                <h1>Create your dog</h1>
+                <form onSubmit={e => handleSubmit(e)} className={style.Form}>
 
                     <div className={style.name}>
-                        <label>Name:</label>
+                        <div>
+                           <label>Name</label> 
+                        </div>
+                        
                         <input
-                            className={style.inputname}
+                            className={style.input}
                             type="text"
                             value={input.nombre}
                             name="nombre"
@@ -144,9 +146,12 @@ export default function DogCreate() {
                     </div>
 
                     <div className={style.name}>
-                        <label>Bred For:</label>
+                        <div>
+                             <label>Bred For</label>
+                        </div>
+                       
                         <input
-                            className={style.inputname}
+                            className={style.input}
                             type="text"
                             value={input.criado_para}
                             name="criado_para"
@@ -155,12 +160,13 @@ export default function DogCreate() {
                         {errors.criado_para && <p className="error">{errors.criado_para}</p>}
                     </div>
 
-
-                    <div className={style.alturapeso}>
                         <div className={style.altura_min}>
-                            <label>Heigth Max:</label>
+                            <div>
+                                <label>Heigth Max</label> 
+                            </div>
+                           
                             <input
-                                className={style.inputheight}
+                                className={style.input}
                                 type="number"
                                 value={input.altura_max}
                                 name="altura_max"
@@ -169,13 +175,13 @@ export default function DogCreate() {
                             {errors.altura_max && <p className="error">{errors.altura_max}</p>}
                         </div>
 
-
-
-
                         <div className={style.altura_min}>
-                            <label>Heigth Min:</label>
+                            <div>
+                                <label>Heigth Min</label>
+                            </div>
+                            
                             <input
-                                className={style.inputheight}
+                                className={style.input}
                                 type="number"
                                 value={input.altura_min}
                                 name="altura_min"
@@ -186,9 +192,12 @@ export default function DogCreate() {
 
 
                         <div className={style.altura_min}>
-                            <label>Weigth Max:</label>
+                            <div>
+                                  <label>Weigth Max</label> 
+                            </div>
+                         
                             <input
-                                className={style.inputheight}
+                                className={style.input}
                                 type="number"
                                 value={input.peso_max}
                                 name="peso_max"
@@ -197,12 +206,12 @@ export default function DogCreate() {
                             {errors.peso_max && <p className="error">{errors.peso_max}</p>}
                         </div>
 
-
-
                         <div className={style.altura_min}>
-                            <label>Weigth Min:</label>
+                            <div>
+                              <label>Weigth Min</label>   
+                            </div>
                             <input
-                                className={style.inputheight}
+                                className={style.input}
                                 type="number"
                                 value={input.peso_min}
                                 name="peso_min"
@@ -211,22 +220,13 @@ export default function DogCreate() {
                             {errors.peso_min && <p className="error">{errors.peso_min}</p>}
                         </div>
 
-                        {/* <div className={style.attack}>
-                            <label>Attack:</label>
-                            <input
-                                type="range"
-                                value={input.attack}
-                                name="attack"
-                                min={5}
-                                max={210}
-                                onChange={e => handleChange(e)}
-                            />
-                            {input.attack}
-                        </div> */}
                        <div className={style.altura_min}>
-                            <label>Life Years Max:</label>
+                        <div>
+                           <label>Life Years Max</label> 
+                        </div>
+                            
                             <input
-                                className={style.inputheight}
+                                className={style.input}
                                 type="number"
                                 value={input.AñosDeVida_max}
                                 name="AñosDeVida_max"
@@ -237,9 +237,12 @@ export default function DogCreate() {
 
 
                         <div className={style.altura_min}>
-                            <label>Life Years Min:</label>
+                            <div>
+                                <label>Life Years Min</label>
+                            </div>
+                            
                             <input
-                                className={style.inputheight}
+                                className={style.input}
                                 type="number"
                                 value={input.AñosDeVida_min}
                                 name="AñosDeVida_min"
@@ -248,28 +251,13 @@ export default function DogCreate() {
                             {errors.AñosDeVida_min && <p className="error">{errors.AñosDeVida_min}</p>}
                         </div>
 
-
-
-                    </div>
-
-                    <div className={style.types}>
-                        <div className={style.typeprimary}>
-                            <label>TypePrimary: </label>
-                            <select className={style.inputTypePrimary} onChange={e=>handleSelect(e)}>
-                                <option hidden>Temperaments</option>
-                                {Types.map((typ, i) => (
-                                    <option key={i} value={typ.nombre}>{typ.nombre}</option>
-                                ))}
-                            </select>
-                        </div>
-                        </div>
-
-
-
                     <div className={style.imagessss}>
-                        <label>Image:</label>
+                        <div>
+                           <label>Image</label>  
+                        </div>
+                       
                         <input
-                            className={style.inputTypePrimary}
+                            className={style.input}
                             type="text"
                             value={input.imagen}
                             name="imagen"
@@ -280,14 +268,29 @@ export default function DogCreate() {
 
                     {/* <ul><li> {input.types.map(el=>el+" ,")} </li></ul> */}
 
+
+                    <div className={style.types}>
+                        <div className={style.typeprimary}>
+                            <div>
+
+                            <label>Temperaments </label>
+                            </div>
+                            <select className={style.input} onChange={e=>handleSelect(e)}>
+                                <option hidden>Default</option>
+                                {Types.map((typ, i) => (
+                                    <option key={i} value={typ.nombre}>{typ.nombre}</option>
+                                ))}
+                            </select>
+                        </div>
+                        </div>
                      <button className={style.iboton} 
                     type="submit" 
-                    disabled={
-                        input.name 
-                            ? true
-                            : false
-                    }
-                    >Crear Pokemon</button> 
+                    // disabled={
+                    //     input.name 
+                    //         ? true
+                    //         : false
+                    // }
+                    >Create Dog</button> 
                   
                     {msg.length > 0 && ( 
                         <div className="mensaje">
@@ -295,36 +298,28 @@ export default function DogCreate() {
                             <Link to="/home">Go back to Home</Link>
                         </div>
                     )}
-
                 </form>
 
-                <div style={{backgroundColor:'blue'}}>
-                  <div>
-                  <span><img src={input.imagen} style={{width:'300px'}}/></span>
-                  </div>
-                  <span>Nombre: {input.nombre}</span>
-                  <div>
-                  <span>Altura:{input.altura_max} - {input.altura_min} Cm</span>
-                  </div>
-                  <div>
-                  <span>Peso:{input.peso_min} - {input.peso_max} Kg</span>
-                  </div>
-                  <div>
-                  <span>Años de vida:{input. AñosDeVida_min} - {input.AñosDeVida_max} Years</span>
-                  </div>
-                  
 
-                  <div>
-                  <span>criado para:{input.criado_para}</span>
-                  </div>
-                  <div>
-                  <span>Temperaments: {input.temperamento?.map(e=>{
-                    return(
-                      <span>{e},</span>
-                    )
-                  })}</span>
-                  </div>
                 </div>
+               {
+                input.nombre ? 
+                <CardCreate
+                key={input.id}
+                imagen={input.imagen}
+                id={input.id}
+                nombre={input.nombre}
+                peso_max={input.peso_max}
+                peso_min={input.peso_min}
+                altura_max={input.altura_max}
+                altura_min={input.altura_min}
+                temperamento={input.temperamento}
+                criado_para={input.criado_para}
+                AñosDeVida_min={input.AñosDeVida_min}
+                AñosDeVida_max={input.AñosDeVida_max}
+              /> : ''
+               }
+
             </div>
 
         </div>

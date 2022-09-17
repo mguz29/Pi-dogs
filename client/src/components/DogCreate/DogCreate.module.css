@@ -1,0 +1,30 @@
+.formulario{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin: 40px;
+}
+
+.Form{
+    display: flex;
+    flex-wrap: wrap;
+    width: 320px;
+    justify-content: space-evenly;  
+}
+
+.input{
+    margin: 5px;
+    width: 150px;
+    padding: 2px;
+}
+.FormularioT{
+    margin: 15px;
+    background-color: var( --color-dark);
+    padding: 30px;
+    border-radius: 10px;
+
+}
+.iboton{
+    margin: 5pxpx;
+}
+

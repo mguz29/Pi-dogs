@@ -1,47 +1,52 @@
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import { Link } from "react-router-dom";
-import { useEffect } from "react";
+import { Link, useHistory } from "react-router-dom";
 import React from "react";
 import { useDispatch } from "react-redux";
-import { useSelector } from "react-redux";
-import { GetDogs, GetTemp, OrderByName, OrderByWeith, setPage } from "../../../actions";
-import huella from '../../../Imagenes/huella.png'
-import hogar from '../../../Imagenes/hogar.png'
+import { DeleteDog } from "../../../actions";
 import style from '../NavBar2/NavBar2.module.css'
+import Swal from 'sweetalert2';
 
-function NavDetail({ setOrden }) {
+
+function NavDetail({id}) {
   const dispatch = useDispatch();
-  // const temperamets = useSelector((state) => state.temp);
-  const names = useSelector((state) => state.dogs);
+  const history = useHistory()
 
+    function handleDelete (e) {
+      e.preventDefault()
+    console.log(id)
 
-  function handleSortWeith(e) {
-    e.preventDefault();
-    if (e.target.value !== "All") {
-      dispatch(OrderByWeith(e.target.value));
-      setOrden(`Ordenado ${e.target.value}`);
-      dispatch(setPage(1))
-    } else {
-      dispatch(GetDogs());
-      setOrden(e.target.value);
+    if (/^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(id)){
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire(
+          'Deleted!',
+          'Your file has been deleted.',
+          'success'
+        )
+        dispatch(DeleteDog(id))
+        history.push('/Home')
+      }
+    })
+    }else{
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'You cannot remove dogs from the API',
+      })
     }
   }
-  useEffect(() => {
-    dispatch(GetTemp());
-    dispatch(GetDogs());
-  }, []);
 
-  // function handleTempera(e) {
-  //   console.log(e.target.value);
-  //   dispatch(filterByTemp(e.target.value));
-  // }
 
-  function handleClick(e) {
-    e.preventDefault();
-    window.location.reload();
-  }
   return (
     <Navbar className="NAVSs" expand="lg">
       <Container fluid>
@@ -62,7 +67,7 @@ function NavDetail({ setOrden }) {
                   </Link>
                 </div>
               </Nav.Link>
-              <Nav.Link>
+              {/* <Nav.Link>
                 <div>
                   <img src={huella} className={style.huellas} />
                 </div>
@@ -74,15 +79,28 @@ function NavDetail({ setOrden }) {
                   <img src={hogar} className={style.huellas} />
                 </Link>
                 </div>
+              </Nav.Link> */}
+
+              <Nav.Link >
+                <div>   
+                <button className="crearPerro" onClick={e=>handleDelete(e)}>
+                    Delete
+                </button>  
+                  
+                </div>
               </Nav.Link>
 
               <Nav.Link >
-                <div className="crearPerro">
-                  <Link to="/Dog" className="crearperro">
-                    Delete
+                <div>   
+                  <Link to='/Home'>
+                <button className="crearPerro">
+                    Return
+                </button>  
                   </Link>
                 </div>
               </Nav.Link>
+
+
             </div>
           </Nav>
         </Navbar.Collapse>

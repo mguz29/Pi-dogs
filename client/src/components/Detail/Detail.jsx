@@ -29,7 +29,7 @@ export default function Detail() {
   return (
     <div className={style.DetailContainer}>
       <div>
-        <NavDetail/>
+        <NavDetail id={id}/>
       </div>
       
          {/* <nav className='nav'>
@@ -71,11 +71,15 @@ export default function Detail() {
                 <h5><span style={{fontWeight: 'bold'}}>Life: </span>
                    {dog[0].añosDeVida} Years</h5>
                 </div>
-
-                <div className={style.containerInfo}>
+                {
+                  dog[0].criado_para ? 
+                  <div className={style.containerInfo}>
                 <img className={style.pin} src={perro}/>
                   <h5><span style={{fontWeight: 'bold'}}>Bred for: </span> {dog[0].criado_para}</h5>
                 </div>
+                :''
+                }
+                
 
                 <div className={style.containerInfo}>
                 <img className={style.pin} src={enojado}/>

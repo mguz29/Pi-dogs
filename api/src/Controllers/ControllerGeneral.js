@@ -33,7 +33,6 @@ const getApiInfo = async () => {
 
 const getDbInfo = async () => {
   const todos = await Dog.findAll({include:Temperamento})
-  console.log(todos)
   const dogsDb = todos.map(el=>{
       return {
         id:el.id,

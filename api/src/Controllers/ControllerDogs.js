@@ -27,7 +27,6 @@ const getDogName= async (req,res,next)=>{
     }
 }
 
-
 const dogCreate = async (req, res, next) => {
     const {
         id,
@@ -43,16 +42,7 @@ const dogCreate = async (req, res, next) => {
         temperamento
 
     } = req.body
-    console.log( id,
-        nombre,
-        altura_min,
-        altura_max,
-        peso_min,
-        peso_max,
-        AñosDeVida_max,
-        AñosDeVida_min,
-        criado_para,
-        Temperamento)
+
 
     let dogCreated= await Dog.create({
         nombre,
@@ -69,7 +59,6 @@ const dogCreate = async (req, res, next) => {
      let temperamentoDb = await Temperamento.findAll({
          where: { nombre : temperamento}
      })
-     console.log(temperamentoDb)
      dogCreated.addTemperamento(temperamentoDb) // metodo de SQL que lo que hace es traerme de la tabla lo que le pido por parametro
     res.send('Dog create')
 
@@ -91,15 +80,22 @@ const dogsId =  async (req, res, next) => {
 }
 
 const DeleteDogs = async (req, res)=>{
-    const {id} = req.params
-     if (/^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(id)){
-        const deleteDog = await Dog.destroy({
-            where:{id:id}
-        })
-        res.send('Dog has been delete')
-    }else{
-        res.send('Cant remove dogs from api')
+     const {id} = req.params
+    try {
+        if (/^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(id)) {
+            const deleteDog = await Dog.destroy({
+                where: { id: id }
+            })
+            res.send('Dog has been delete')
+        } else {
+            throw new Error('No se puede borrar de la api')
+        }
+    } catch (error) {
+        res.send(' no se pued borrar de la api')
+        
     }
+   
+
 
 }
 

@@ -12,7 +12,7 @@
   margin: 5px;
   font-family: "Trebuchet MS", sans-serif;
   font-size: 22px;
-  background-color:  var(--color-dark) !important;
+  background-color:  var(--color-nav) !important;
   color: rgb(39, 39, 39);
   padding: 8px;
   outline: none;

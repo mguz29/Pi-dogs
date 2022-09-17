@@ -5,20 +5,27 @@
 
 .input {
     border-radius: 5px;
-
-    /* box-shadow: rgb(153 153 153) 0px 5px; */
-    padding: 7px;
+    padding: 9px;
     border-radius: 6px;
-    /* background-color: navajowhite; */
     border-style: none;
+    box-shadow: rgb(0 0 0 / 20%) 4px 4px 4px 2px;
+
 }
 
 .submit {
     padding: 7px;
     border-radius: 6px;
     margin: 5px;
-    border: solid black 1px;
+    box-shadow: rgb(0 0 0 / 20%) 4px 4px 4px 2px;
+    font-family: var(--font-f);
+    border: none;
 }
+.submit:hover {
+    background-color: var(--backgroun-buttons);
+    box-shadow: 0px 15px 20px rgba(255, 64, 214, 0.4);
+    color: #fff;
+    transform: translateY(-1px);
+  }
 
 .Container {
 
