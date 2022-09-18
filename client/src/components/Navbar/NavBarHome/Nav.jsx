@@ -76,7 +76,7 @@ function NavScrollExample({ setOrden }) {
             </Nav.Link>
             <Nav.Link ><div>
         <select className="ordenNombre" onChange={(e) => handleSort(e)}>
-          <option hidden>Order by name</option>
+          <option hidden style={{fontWeight:'bold'}}>Order by name</option>
           <option value="All">All</option>
           <option value="asc">A-Z</option>
           <option value="desc">Z-A</option>

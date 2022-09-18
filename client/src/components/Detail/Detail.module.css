@@ -51,6 +51,14 @@ margin: 5px 0px;
     height: 90%;
     width: 50%;
 }
+.text{
+    font-family: var( --fonts-) !important;
+    font-weight: 900 !important;
+}
+
+h5{
+    font-family: var( --fonts-) !important;
+}
 
 
 

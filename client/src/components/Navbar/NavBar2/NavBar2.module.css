@@ -7,7 +7,7 @@
     width: 55px;
 }
 .circulo{
-  background-color: rgb(255, 255, 255);
+  background-color: white;
   padding: 10px;
   border-radius: 70%;
 }
@@ -20,6 +20,20 @@
     padding: 10px;
     border-radius: 10px;
     background-color: white;
+    text-decoration: none;
+    font-size: 15px;
+    margin-bottom: 10px;
+    font-family: var(--font-f);
+    box-shadow: rgb(0 0 0 / 20%) 4px 4px 4px 2px;
+    border: none;
+    
+}
+
+.crearPerro:hover {
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgb(255, 220, 184);
     text-decoration: none;
     font-size: 15px;
     margin-bottom: 10px;

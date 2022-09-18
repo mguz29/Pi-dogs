@@ -17,3 +17,12 @@
     color: #fff;
     transform: translateY(-1px); 
 }
+
+.text{
+    font-family: var( --fonts-) !important;
+    font-weight: 900 !important;
+}
+
+.deta{
+    font-family: var( --fonts-) !important;
+}

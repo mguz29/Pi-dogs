@@ -17,7 +17,8 @@
     border-radius: 6px;
     margin: 5px;
     box-shadow: rgb(0 0 0 / 20%) 4px 4px 4px 2px;
-    font-family: var(--font-f);
+    font-family: var( --fonts-);
+    font-weight: 900;
     border: none;
     background-color: var(--backgroun-buttons);
 }

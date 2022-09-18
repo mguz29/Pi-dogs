@@ -1,5 +1,7 @@
 .tittle{
-    font-size: 1.25rem;
+    font-size: 1.4rem;
+    font-family: var( --fonts-) !important;
+    font-weight: 900;
 }
 .divCo{
     display: flex;
@@ -21,18 +23,22 @@
 }
 
 .buttonInnfo{
-    background-color: white !important;
+    background-color: antiquewhite !important;
     margin: 7px;
-    border: solid #feb2cdd6 2px !important;
-    padding: 5px;
-    border-radius: 5px;
-    color: rgb(255, 126, 173)!important;
-    box-shadow: rgb(0 0 0 / 20%) 4px 4px 4px 2px
+    /* border: solid rgb(255, 199, 144) 2px !important; */
+    border: solid transparent 2px !important;
+    color: rgb(0, 0, 0)!important;
+    box-shadow: rgb(0 0 0 / 30%) 4px 4px 4px 2px;
+    font-family: var( --fonts-) !important;
 }
 
 .buttonInnfo:hover{
-    background-color:rgb(255, 190, 214) !important;
+    background-color:rgb(255, 179, 103) !important;
     color: rgb(255, 255, 255)!important;
     box-shadow: rgb(0 0 0 / 20%) 4px 4px 4px 2px !important
     ;
+}
+
+.text{
+    font-family: var( --fonts-) !important;
 }

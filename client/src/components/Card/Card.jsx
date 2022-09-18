@@ -31,18 +31,18 @@ function CArd({
       <Card.Body>
         <div>
 
-        <Card.Title className={style.tittle}><h4>{nombre.split(' ', 3).join(' ')}</h4></Card.Title>
+        <Card.Title><h4 className={style.tittle}>{nombre.split(' ', 2).join(' ')}</h4></Card.Title>
         <div
          className={style.divCo}
          >
           <Card.Img   style={{ width: "30px", marginRight: "8px" }} src={bascula} />
-          <Card.Text>
+          <Card.Text className={style.text}>
           Weight: {peso_min ? peso_min : 'Not Found'} - {peso_max ? peso_max : 'Not Found'} KG
           </Card.Text>
         </div>
         <div className={style.divCo}>
         <Card.Img src={Hearth} style={{ width: "30px", marginRight: "8px" }}/>
-        <Card.Text>
+        <Card.Text className={style.text}>
           {temperamento.length >= 3
             ? temperamento.map((e, i) => {
                 if (i < 2) {

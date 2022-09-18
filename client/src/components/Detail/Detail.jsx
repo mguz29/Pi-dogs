@@ -48,34 +48,34 @@ export default function Detail() {
             <div className={style.ImgContainer}><img src={dog[0].imagen} className={style.image} /> </div>
             <div className={style.data}>
 
-                <h1 style={{fontWeight: 'bold'}}>{dog[0].nombre}</h1>
+                <h1 className={style.text}>{dog[0].nombre}</h1>
             <div className={style.textDetail}>
 
                 <div className={style.containerInfo}>
                 <img className={style.pin} src={bascula}/>
                 <h5>
-                  <span style={{fontWeight: 'bold'}}>Weight: </span>
+                  <span className={style.text}>Weight: </span>
                   {dog[0].peso_min} - {dog[0].peso_max} Kg
                 </h5>
                 </div>
 
                 <div className={style.containerInfo}>
                 <img className={style.pin}src={regla}/>
-                  <h5> <span style={{fontWeight: 'bold'}}>Height: </span>
+                  <h5> <span className={style.text}>Height: </span>
                     {dog[0].altura_min} - {dog[0].altura_max} Cm
                   </h5>
                 </div>
 
                 <div className={style.containerInfo}>
                 <img className={style.pin} src={Hearth}/>
-                <h5><span style={{fontWeight: 'bold'}}>Life: </span>
+                <h5><span className={style.text}>Life: </span>
                    {dog[0].añosDeVida} Years</h5>
                 </div>
                 {
                   dog[0].criado_para ? 
                   <div className={style.containerInfo}>
                 <img className={style.pin} src={perro}/>
-                  <h5><span style={{fontWeight: 'bold'}}>Bred for: </span> {dog[0].criado_para}</h5>
+                  <h5><span className={style.text}>Bred for: </span> {dog[0].criado_para}</h5>
                 </div>
                 :''
                 }
@@ -83,7 +83,7 @@ export default function Detail() {
 
                 <div className={style.containerInfo}>
                 <img className={style.pin} src={enojado}/>
-                  <h5 style={{width:'75%'}}><span style={{fontWeight: 'bold'}}>Temperament: </span> {dog[0].temperamento? dog[0].temperamento.join(', ') : 'Not Found'}</h5>
+                  <h5 style={{width:'75%'}}><span className={style.text}>Temperament: </span> {dog[0].temperamento? dog[0].temperamento.join(', ') : 'Not Found'}</h5>
                 </div>
             </div>
             </div>

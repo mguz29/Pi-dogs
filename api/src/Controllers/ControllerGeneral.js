@@ -21,7 +21,7 @@ const getApiInfo = async () => {
             peso_max: d.weight.metric.split(" - ")[1] && d.weight.metric.split(" - ")[1],
             peso_min: d.weight.metric.split(" - ")[0] && d.weight.metric.split(" - ")[0],
             añosDeVida: d.life_span,
-            temperamento:d.temperament? d.temperament.split(', ') :["Temperamento no encontrado"],
+            temperamento:d.temperament? d.temperament.split(', ') :["Temperament not found"],
             imagen:d.image.url,
             criado_para:d.bred_for
         }

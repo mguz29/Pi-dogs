@@ -41,7 +41,7 @@ function CardCreate({
          className={style.divCo}
         >
           {/* <Card.Img   style={{ width: "30px", marginRight: "8px" }} src={bascula} /> */}
-          <Card.Text>
+          <Card.Text className={style.text}>
          {criado_para}
           </Card.Text>
 
@@ -50,8 +50,8 @@ function CardCreate({
          className={style.divCo}
         >
           <Card.Img   style={{ width: "30px", marginRight: "8px" }} src={bascula} />
-          <Card.Text>
-          Weight: {peso_min ? peso_min : 'Not Found'} - {peso_max ? peso_max : 'Not Found'} KG
+          <Card.Text className={style.deta}>
+          <span className={style.text}>Weight:</span> {peso_min ? peso_min : 'Not Found'} - {peso_max ? peso_max : 'Not Found'} Kg
           </Card.Text>
 
         </div>
@@ -59,23 +59,23 @@ function CardCreate({
          className={style.divCo}
         >
            <Card.Img   style={{ width: "30px", marginRight: "8px" }} src={regla} />
-        <Card.Text>
-          Height: {altura_min ? altura_min : 'Not Found'} - {altura_max ? altura_max : 'Not Found'} KG
-          </Card.Text>
+        <Card.Text className={style.deta}>
+          <span className={style.text}>Height:</span> {altura_min ? altura_min : 'Not Found'} - {altura_max ? altura_max : 'Not Found'} Cm
+          </Card.Text >
           </div>
 
           <div
          className={style.divCo}
         >
            <Card.Img   style={{ width: "30px", marginRight: "8px" }} src={Hearth} />
-        <Card.Text>
-          Life: {AñosDeVida_min ? AñosDeVida_min : 'Not Found'} - {AñosDeVida_max ? AñosDeVida_max : 'Not Found'} Years
+        <Card.Text className={style.deta}>
+         <span className={style.text}>Life:</span>  {AñosDeVida_min ? AñosDeVida_min : 'Not Found'} - {AñosDeVida_max ? AñosDeVida_max : 'Not Found'} Years
           </Card.Text>
           </div>
 
         <div className={style.divCo}>
         <Card.Img src={enojado} style={{ width: "30px", marginRight: "8px" }}/>
-        <Card.Text>
+        <Card.Text className={style.deta}>
           { temperamento.map((e, i) => {
                   return <span> {e}, </span>;
               })

@@ -133,12 +133,12 @@ export default function DogCreate() {
 
             <div className={style.FormularioT}>
           
-                <h1>Create your dog</h1>
+                <h1>Create Your Pet</h1>
                 <form onSubmit={e => handleSubmit(e)} className={style.Form}>
 
                     <div className={style.name}>
                         <div>
-                           <label>Name</label> 
+                           <label className={style.text}>Name</label> 
                         </div>
                         
                         <input
@@ -154,7 +154,7 @@ export default function DogCreate() {
 
                     <div className={style.name}>
                         <div>
-                             <label>Bred For</label>
+                             <label className={style.text}>Bred For</label>
                         </div>
                        
                         <input
@@ -169,7 +169,7 @@ export default function DogCreate() {
 
                         <div className={style.altura_min}>
                             <div>
-                                <label>Heigth Max</label> 
+                                <label className={style.text}>Heigth Max</label> 
                             </div>
                            
                             <input
@@ -186,7 +186,7 @@ export default function DogCreate() {
 
                         <div className={style.altura_min}>
                             <div>
-                                <label>Heigth Min</label>
+                                <label className={style.text}>Heigth Min</label>
                             </div>
                             
                             <input
@@ -204,7 +204,7 @@ export default function DogCreate() {
 
                         <div className={style.altura_min}>
                             <div>
-                                  <label>Weigth Max</label> 
+                                  <label className={style.text}>Weigth Max</label> 
                             </div>
                          
                             <input
@@ -221,7 +221,7 @@ export default function DogCreate() {
 
                         <div className={style.altura_min}>
                             <div>
-                              <label>Weigth Min</label>   
+                              <label className={style.text}>Weigth Min</label>   
                             </div>
                             <input
                                 className={style.input}
@@ -237,7 +237,7 @@ export default function DogCreate() {
 
                        <div className={style.altura_min}>
                         <div>
-                           <label>Life Years Max</label> 
+                           <label className={style.text}> Life Years Max</label> 
                         </div>
                             
                             <input
@@ -255,7 +255,7 @@ export default function DogCreate() {
 
                         <div className={style.altura_min}>
                             <div>
-                                <label>Life Years Min</label>
+                                <label className={style.text}>Life Years Min</label>
                             </div>
                             
                             <input
@@ -272,7 +272,7 @@ export default function DogCreate() {
 
                     <div className={style.imagessss}>
                         <div>
-                           <label>Image</label>  
+                           <label className={style.text}>Image</label>  
                         </div>
                        
                         <input
@@ -292,7 +292,7 @@ export default function DogCreate() {
                         <div className={style.typeprimary}>
                             <div>
 
-                            <label>Temperaments </label>
+                            <label className={style.text}>Temperaments </label>
                             </div>
                             <select className={style.input} onChange={e=>handleSelect(e)}>
                                 <option hidden>Default</option>

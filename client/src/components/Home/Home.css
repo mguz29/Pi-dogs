@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 .Cardshijo {
     width: 100%;
     display: flex;
@@ -22,7 +23,8 @@ body{
     --font-f:'Raleway', sans-serif;
     /* --backgroun-buttons:#fcd3e2d6; */
     /* --backgroun-buttons:white; */
-    --backgroun-buttons:antiquewhite;
+    --backgroun-buttons:white;
+    --fonts-:'Open Sans', sans-serif;;
 }
 
 .card {
@@ -69,24 +71,25 @@ body{
     text-decoration: none;
     font-size: 15px;
     margin-bottom: 10px;
-    font-family: var(--font-f);
+    font-family: var( --fonts-);
     box-shadow: rgb(0 0 0 / 20%) 4px 4px 4px 2px;
     border: none;
+    font-weight: 900
     
 }
-.crearPerro:hover {
+/* .crearPerro:hover {
     background-color: var(--backgroun-buttons);
     box-shadow: 0px 15px 20px rgba(255, 64, 214, 0.4);
     color: #fff;
     transform: translateY(-1px);
     
-}
+} */
 
 .crearPerro:hover{
     /* background-color:rgb(255, 126, 173) ; */
     color: rgb(255, 255, 255) !important;
     box-shadow: rgb(0 0 0 / 30%) 4px 4px 4px 2px;
-    background-color:rgb(255, 190, 214) !important;
+    background-color:var(--color-dark) !important;
     transform: translateY(-3px) translateX(3px);
     transition: all .1s ease-in-out;
 }
@@ -96,7 +99,7 @@ body{
     color: black;
 }
 
-.crearperro :hover{
+.crearperro:hover{
     color: black;
 }
 
@@ -112,13 +115,14 @@ body{
 
 .ordenNombre {
     margin: 10px;
-    /* box-shadow: rgb(153 153 153) 0px 5px; */
+    width: 100%;
     padding: 9px;
     border-radius: 10px;
     background-color: var(--backgroun-buttons);
     border-style: none;
-    font-family: var(--font-f);
+    font-family: var( --fonts-);
     box-shadow: rgb(0 0 0 / 20%) 4px 4px 4px 2px;
+    font-weight: 900;
 }
 
 .ordenPeso {
@@ -127,8 +131,10 @@ body{
     border-radius: 10px;
     background-color: var(--backgroun-buttons);
     border-style: none;
-    font-family: var(--font-f);
+    font-family: var( --fonts-);
     box-shadow: rgb(0 0 0 / 20%) 4px 4px 4px 2px;
+    font-weight: 900;
+    width: 100%;
 }
 
 .paginado {
@@ -156,17 +162,3 @@ body{
     background-color: var(--color-nav);
 }
 
-.ConatinerPaginado {
-    /* background-color: black;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    /* height: 20px; */
-
-}
-
-.Container {
-    /* height: 100vh;
-    background-image:url('https://img.freepik.com/vector-gratis/patrones-fisuras-cosas-perro-collar-cuenco-bolas-huesos-huellas-recompensa_100959-76.jpg') ; 
-    background-size: 100% 100%;*/
-}
