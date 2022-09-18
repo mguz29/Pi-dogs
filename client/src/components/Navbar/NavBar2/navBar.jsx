@@ -7,7 +7,8 @@ import { useDispatch } from "react-redux";
 import { DeleteDog } from "../../../actions";
 import style from '../NavBar2/NavBar2.module.css'
 import Swal from 'sweetalert2';
-
+import face from '../../../Imagenes/face.png'
+import riendo from '../../../Imagenes/riendo.png'
 
 function NavDetail({id}) {
   const dispatch = useDispatch();
@@ -45,8 +46,6 @@ function NavDetail({id}) {
       })
     }
   }
-
-
   return (
     <Navbar className="NAVSs" expand="lg">
       <Container fluid>
@@ -59,47 +58,32 @@ function NavDetail({id}) {
             navbarScroll
           >
             <div className={style.NavbarDe}>
-
               <Nav.Link >
-                <div className="crearPerro">
-                  <Link to="/Dog" className="crearperro">
-                    Crear Perro
+                <div>   
+                  <Link to='/Home'>
+                <button className={style.crearPerro}>
+                    Go Home
+                </button>  
                   </Link>
                 </div>
               </Nav.Link>
-              {/* <Nav.Link>
-                <div>
-                  <img src={huella} className={style.huellas} />
+
+              <Nav.Link >
+                <div className={style.circulo}>
+                  <Link to="/Dog" className="crearperro">
+                   <img src={riendo} className={style.img}/>
+                  </Link>
                 </div>
               </Nav.Link>
 
-              <Nav.Link>
-                <div>
-                <Link to="/Home" className="crearperro">
-                  <img src={hogar} className={style.huellas} />
-                </Link>
-                </div>
-              </Nav.Link> */}
-
               <Nav.Link >
                 <div>   
-                <button className="crearPerro" onClick={e=>handleDelete(e)}>
+                <button className={style.crearPerro} onClick={e=>handleDelete(e)}>
                     Delete
                 </button>  
                   
                 </div>
               </Nav.Link>
-
-              <Nav.Link >
-                <div>   
-                  <Link to='/Home'>
-                <button className="crearPerro">
-                    Return
-                </button>  
-                  </Link>
-                </div>
-              </Nav.Link>
-
 
             </div>
           </Nav>
@@ -108,5 +92,4 @@ function NavDetail({id}) {
     </Navbar>
   );
 }
-
 export default NavDetail

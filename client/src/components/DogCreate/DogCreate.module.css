@@ -33,10 +33,12 @@
     border-radius: 5px;
     color: rgb(255, 126, 173);
     box-shadow: rgb(0 0 0 / 20%) 4px 4px 4px 2px;
+    background-color: var(--backgroun-buttons);
 }
 .iboton:hover{
-    background-color:rgb(255, 126, 173) ;
+    /* background-color:rgb(255, 126, 173) ; */
     color: rgb(255, 255, 255);
-    box-shadow: rgb(0 0 0 / 20%) 4px 4px 4px 2px;
+    box-shadow: rgb(0 0 0 / 40%) 4px 4px 4px 2px;
+    background-color:rgb(255, 176, 205) ;
 }
 

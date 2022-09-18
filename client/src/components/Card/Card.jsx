@@ -29,10 +29,12 @@ function CArd({
         <h1> Cargbando</h1>
       )}
       <Card.Body>
-        <Card.Title className={style.tittle}><h4>{nombre}</h4></Card.Title>
+        <div>
+
+        <Card.Title className={style.tittle}><h4>{nombre.split(' ', 3).join(' ')}</h4></Card.Title>
         <div
          className={style.divCo}
-        >
+         >
           <Card.Img   style={{ width: "30px", marginRight: "8px" }} src={bascula} />
           <Card.Text>
           Weight: {peso_min ? peso_min : 'Not Found'} - {peso_max ? peso_max : 'Not Found'} KG
@@ -43,17 +45,18 @@ function CArd({
         <Card.Text>
           {temperamento.length >= 3
             ? temperamento.map((e, i) => {
-                if (i < 3) {
+                if (i < 2) {
                   return <span> {e}, </span>;
                 }
               })
-            : temperamento }
+              : temperamento }
         </Card.Text>
         </div>
 
         <Link to={`/Dogs/${id}`}>
-          <Button  className={style.buttonInnfo}> Detalle</Button>
+          <Button  className={style.buttonInnfo}>Detail</Button>
         </Link>
+        </div>
       </Card.Body>
     </Card>
   );

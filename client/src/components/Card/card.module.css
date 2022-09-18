@@ -1,11 +1,11 @@
 .tittle{
-    font-size: 1.4rem;
+    font-size: 1.25rem;
 }
 .divCo{
     display: flex;
     align-items: center;
     justify-content:center ;
-    margin-bottom:10px ;
+    margin:10px ;
 }
 
 .Detail{
@@ -21,7 +21,18 @@
 }
 
 .buttonInnfo{
-    border: solid red 1px !important;
-    background-color: transparent !important;
-    color: red !important;
+    background-color: white !important;
+    margin: 7px;
+    border: solid #feb2cdd6 2px !important;
+    padding: 5px;
+    border-radius: 5px;
+    color: rgb(255, 126, 173)!important;
+    box-shadow: rgb(0 0 0 / 20%) 4px 4px 4px 2px
+}
+
+.buttonInnfo:hover{
+    background-color:rgb(255, 190, 214) !important;
+    color: rgb(255, 255, 255)!important;
+    box-shadow: rgb(0 0 0 / 20%) 4px 4px 4px 2px !important
+    ;
 }

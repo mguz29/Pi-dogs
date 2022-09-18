@@ -143,6 +143,7 @@ export default function DogCreate() {
                         
                         <input
                             className={style.input}
+                            placeholder='Name..'
                             type="text"
                             value={input.nombre}
                             name="nombre"

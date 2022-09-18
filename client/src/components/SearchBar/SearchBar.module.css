@@ -19,6 +19,7 @@
     box-shadow: rgb(0 0 0 / 20%) 4px 4px 4px 2px;
     font-family: var(--font-f);
     border: none;
+    background-color: var(--backgroun-buttons);
 }
 .submit:hover {
     background-color: var(--backgroun-buttons);

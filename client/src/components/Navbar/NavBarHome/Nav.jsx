@@ -69,27 +69,27 @@ function NavScrollExample({ setOrden }) {
           >
             <Nav.Link >
             <div className="crearPerro">
-        <Link to="/dog" className="crearperro">
-          Crear Perro
+        <Link to="/Dog" className="crearperro">
+          Create Pet
         </Link>
       </div>
             </Nav.Link>
-            <Nav.Link href="#action2"><div>
+            <Nav.Link ><div>
         <select className="ordenNombre" onChange={(e) => handleSort(e)}>
-          <option hidden>Ordenar por Nombre</option>
+          <option hidden>Order by name</option>
           <option value="All">All</option>
-          <option value="asc">Ascendente</option>
-          <option value="desc">Descendente</option>
+          <option value="asc">A-Z</option>
+          <option value="desc">Z-A</option>
         </select>
       </div></Nav.Link>
 
-      <Nav.Link href="#action2">
+      <Nav.Link>
         <div>
         <select className="ordenPeso" onChange={(e)=> handleSortWeith(e)}>
-          <option hidden>Ordenar por Peso</option>
+          <option hidden>Order by weight</option>
           <option value="All">All</option>
           <option value="asc">Ascendente</option>
-          <option value="desc">Descendente</option>
+          <option value="desc">Less</option>
         </select>
       </div>
       </Nav.Link>
