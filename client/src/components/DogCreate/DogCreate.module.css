@@ -16,6 +16,8 @@
     margin: 5px;
     width: 150px;
     padding: 2px;
+    border-radius: 5px;
+    border: solid black 1.5px;
 }
 .FormularioT{
     margin: 15px;
@@ -25,6 +27,16 @@
 
 }
 .iboton{
-    margin: 5pxpx;
+    margin: 7px;
+    border: solid #feb2cdd6 2px !important;
+    padding: 5px;
+    border-radius: 5px;
+    color: rgb(255, 126, 173);
+    box-shadow: rgb(0 0 0 / 20%) 4px 4px 4px 2px;
+}
+.iboton:hover{
+    background-color:rgb(255, 126, 173) ;
+    color: rgb(255, 255, 255);
+    box-shadow: rgb(0 0 0 / 20%) 4px 4px 4px 2px;
 }
 

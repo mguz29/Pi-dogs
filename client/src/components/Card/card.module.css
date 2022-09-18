@@ -19,3 +19,9 @@
     color: #fff;
     transform: translateY(-1px); 
 }
+
+.buttonInnfo{
+    border: solid red 1px !important;
+    background-color: transparent !important;
+    color: red !important;
+}

@@ -15,7 +15,7 @@ body{
     /* --color-nav:rgb(255, 179, 103);
     --color-dark: rgb(232 218 202); */
     --color-nav:#feb2cdd6;
-    --color-dark:#fcd3e2d6;
+    --color-dark:#fcd3e2;
     --color-button: white;
     --font-f:'Raleway', sans-serif;
     --backgroun-buttons:#fcd3e2d6;
@@ -67,6 +67,7 @@ body{
     margin-bottom: 10px;
     font-family: var(--font-f);
     box-shadow: rgb(0 0 0 / 20%) 4px 4px 4px 2px;
+    border: none;
     
 }
 .crearPerro:hover {

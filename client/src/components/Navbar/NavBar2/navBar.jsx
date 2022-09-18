@@ -30,7 +30,7 @@ function NavDetail({id}) {
       if (result.isConfirmed) {
         Swal.fire(
           'Deleted!',
-          'Your file has been deleted.',
+          'Your Pet has been deleted.',
           'success'
         )
         dispatch(DeleteDog(id))

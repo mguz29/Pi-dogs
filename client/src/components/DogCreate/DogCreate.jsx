@@ -7,6 +7,7 @@ import style from './DogCreate.module.css'
 import { GetTemp, postDogs } from '../../actions';
 import CardCreate from '../Card/CardCreate/CardCreate';
 import NavDetail from '../Navbar/NavBar2/navBar';
+import Swal from 'sweetalert2';
 
 export default function DogCreate() {
     const dispatch = useDispatch()
@@ -24,7 +25,7 @@ export default function DogCreate() {
             AñosDeVida_min:0,
             criado_para:"",
             peso_max:0,
-            imagen:"",
+            imagen:'' || "https://www.gifss.com/animales/perros/images/perro-animado-12.gif",
             temperamento: [],
 
     })
@@ -81,7 +82,11 @@ export default function DogCreate() {
         e.preventDefault();
         if (Object.keys(errors).length === 0 && input.nombre)
             dispatch(postDogs(input))
-        alert('Personaje Creado')
+            Swal.fire({
+                icon: 'success',
+                title: 'Awesome...',
+                text: 'Pet created with success!',
+              })    
         setInput({
             nombre: "",
             altura_min: 0,
@@ -94,6 +99,7 @@ export default function DogCreate() {
             imagen:"",
             temperamento: [],
         })
+        history.push('/Home')
 
     }
 
@@ -167,6 +173,8 @@ export default function DogCreate() {
                            
                             <input
                                 className={style.input}
+                                min={1}
+                                max={100}
                                 type="number"
                                 value={input.altura_max}
                                 name="altura_max"
@@ -182,6 +190,8 @@ export default function DogCreate() {
                             
                             <input
                                 className={style.input}
+                                min={1}
+                                max={100}
                                 type="number"
                                 value={input.altura_min}
                                 name="altura_min"
@@ -198,6 +208,8 @@ export default function DogCreate() {
                          
                             <input
                                 className={style.input}
+                                min={1}
+                                max={100}
                                 type="number"
                                 value={input.peso_max}
                                 name="peso_max"
@@ -212,6 +224,8 @@ export default function DogCreate() {
                             </div>
                             <input
                                 className={style.input}
+                                min={1}
+                                max={100}
                                 type="number"
                                 value={input.peso_min}
                                 name="peso_min"
@@ -227,6 +241,8 @@ export default function DogCreate() {
                             
                             <input
                                 className={style.input}
+                                min={1}
+                                max={100}
                                 type="number"
                                 value={input.AñosDeVida_max}
                                 name="AñosDeVida_max"
@@ -244,6 +260,8 @@ export default function DogCreate() {
                             <input
                                 className={style.input}
                                 type="number"
+                                min={1}
+                                max={100}
                                 value={input.AñosDeVida_min}
                                 name="AñosDeVida_min"
                                 onChange={e => handleChange(e)}
@@ -258,7 +276,7 @@ export default function DogCreate() {
                        
                         <input
                             className={style.input}
-                            type="text"
+                            type="url"
                             value={input.imagen}
                             name="imagen"
                             onChange={e => handleChange(e)}
@@ -302,8 +320,8 @@ export default function DogCreate() {
 
 
                 </div>
-               {
-                input.nombre ? 
+               
+                
                 <CardCreate
                 key={input.id}
                 imagen={input.imagen}
@@ -317,8 +335,8 @@ export default function DogCreate() {
                 criado_para={input.criado_para}
                 AñosDeVida_min={input.AñosDeVida_min}
                 AñosDeVida_max={input.AñosDeVida_max}
-              /> : ''
-               }
+              /> 
+               
 
             </div>
 

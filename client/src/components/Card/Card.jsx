@@ -29,7 +29,7 @@ function CArd({
         <h1> Cargbando</h1>
       )}
       <Card.Body>
-        <Card.Title className={style.tittle}>{nombre}</Card.Title>
+        <Card.Title className={style.tittle}><h4>{nombre}</h4></Card.Title>
         <div
          className={style.divCo}
         >
@@ -52,7 +52,7 @@ function CArd({
         </div>
 
         <Link to={`/Dogs/${id}`}>
-          <Button className={style.Detail}> Detalle</Button>
+          <Button  className={style.buttonInnfo}> Detalle</Button>
         </Link>
       </Card.Body>
     </Card>
