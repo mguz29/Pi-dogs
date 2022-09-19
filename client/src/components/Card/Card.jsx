@@ -46,7 +46,7 @@ function CArd({
           {temperamento.length >= 3
             ? temperamento.map((e, i) => {
                 if (i < 2) {
-                  return <span> {e}, </span>;
+                  return <span key={i}> {e}, </span>;
                 }
               })
               : temperamento }

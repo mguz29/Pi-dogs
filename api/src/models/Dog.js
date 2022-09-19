@@ -42,8 +42,9 @@ module.exports = (sequelize) => {
     imagen:{
       type:DataTypes.STRING
     },
-    createID:{
+    createdInDb:{
       type:DataTypes.BOOLEAN,
+      allowNull: false,
       defaultValue:true
     }
   });

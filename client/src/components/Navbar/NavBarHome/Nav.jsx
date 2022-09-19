@@ -9,7 +9,7 @@ import { useEffect } from "react";
 import React from "react";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
-import { GetDogs, GetTemp, OrderByName, OrderByWeith, setPage } from "../../../actions/index";
+import { GetDogs, GetTemp, OrderByName, OrderByWeith, setPage, filterCreated } from "../../../actions/index";
 
 import Filters from '../../Home/Filters/Filters';
 import SearchBar from '../../SearchBar/SearchBar';
@@ -18,6 +18,19 @@ function NavScrollExample({ setOrden }) {
   const dispatch = useDispatch();
   // const temperamets = useSelector((state) => state.temp);
   const names = useSelector((state) => state.dogs);
+
+  function handleFilter(e) {
+    e.preventDefault()
+    if (e.target.value !== "All") {
+      dispatch(filterCreated(e.target.value));
+      setOrden(`Ordenado ${e.target.value}`);
+      dispatch(setPage(1))
+    } else {
+      dispatch(GetDogs());
+      setOrden(e.target.value);
+    }
+  
+  }
 
   function handleSort(e) {
     e.preventDefault();
@@ -68,12 +81,21 @@ function NavScrollExample({ setOrden }) {
             navbarScroll
           >
             <Nav.Link >
-            <div className="crearPerro">
         <Link to="/Dog" className="crearperro">
-          Create Pet
+            <div className="crearPerro">
+                Create Pet
+             </div>
         </Link>
-      </div>
             </Nav.Link>
+
+            <Nav.Link ><div>
+        <select className="ordenNombre" onChange={(e) => handleFilter(e)}>
+          <option hidden style={{fontWeight:'bold'}}>Filter by created</option>
+          <option value="All">All</option>
+          <option value="created">Create</option>
+          <option value="desc">Api</option>
+        </select>
+      </div></Nav.Link>
             <Nav.Link ><div>
         <select className="ordenNombre" onChange={(e) => handleSort(e)}>
           <option hidden style={{fontWeight:'bold'}}>Order by name</option>

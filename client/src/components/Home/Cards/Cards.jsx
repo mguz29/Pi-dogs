@@ -17,7 +17,7 @@ export default function Cards() {
     let lastIndex = page * dogsPerPage; //indice incial para metodo slice
     let firstIndex = lastIndex - dogsPerPage; //indice final para metodo slice
     let currentDogs = allDogsss.slice(firstIndex, lastIndex); //metodo slice para determinar del array los libros a mostrar por pagina
-  console.log(currentDogs)
+
     const limitPage = Math.ceil(allDogsss.length / dogsPerPage);
   
     let firstPrevControl = false; //control de botones, deshabilita cuando es imposible la ejecución
@@ -49,11 +49,11 @@ export default function Cards() {
     <div className="Cards">
     <div className="Cardshijo">
       {currentDogs.length > 0 ? (
-        currentDogs?.map((el) => {
+        currentDogs?.map((el, i) => {
           return (
-            <div className="">
+            <div className="" key={i}>
               <CArd
-                key={el.id}
+                key={i}
                 imagen={el.imagen}
                 id={el.id}
                 nombre={el.nombre}
@@ -81,9 +81,7 @@ export default function Cards() {
         nextLastControl={nextLastControl}
       />
     </div>
-    {/* <div className="Footer">
-      <Footer />
-    </div> */}
+
   </div>
     </div>
   )

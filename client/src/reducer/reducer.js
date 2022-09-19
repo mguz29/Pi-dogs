@@ -47,21 +47,21 @@ function rootReducer(state = initialState, action) {
         dogs: sortedArr,
       };
 
-    case "FILTER_TEMP":
-      const dogs = state.allDogs;
-      console.log(dogs);
+    // case "FILTER_TEMP":
+    //   const dogs = state.allDogs;
+    //   console.log(dogs);
 
-      const temperamentsFilter2 = dogs.filter((e) =>
-        e.Temperamento?.split(", ")
-      );
-      const temperamentsFilter = dogs.filter((e) => {
-        e.Temperamento?.split(", ").includes(action.payload);
-      });
-      console.log(temperamentsFilter2, "filtroxd");
-      return {
-        ...state,
-        dogs: temperamentsFilter,
-      };
+    //   const temperamentsFilter2 = dogs.filter((e) =>
+    //     e.Temperamento?.split(", ")
+    //   );
+    //   const temperamentsFilter = dogs.filter((e) => {
+    //     e.Temperamento?.split(", ").includes(action.payload);
+    //   });
+    //   console.log(temperamentsFilter2, "filtroxd");
+    //   return {
+    //     ...state,
+    //     dogs: temperamentsFilter,
+    //   };
 
     case "GET_NAME_DOGS":
       return {
@@ -100,6 +100,13 @@ function rootReducer(state = initialState, action) {
         ...state,
         dogs: sortWeight
         };
+        case "FILTER_CREATED":
+          let created = state.allDogs
+          let filtrados = action.payload === 'created' ? created.filter(el=>el.createdInDb) : created.filter(el=> !el.createdInDb)
+          return {
+            ...state,
+            dogs: filtrados
+          };
 
     default:
       return state;

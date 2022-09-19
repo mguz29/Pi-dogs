@@ -148,3 +148,12 @@ export function DeleteDog(id) {
 
 
 }
+
+export function filterCreated(payload) {
+    console.log(payload)
+    return {
+        type: 'FILTER_CREATED',
+        payload
+    }
+
+}

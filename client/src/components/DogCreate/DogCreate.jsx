@@ -14,7 +14,6 @@ export default function DogCreate() {
     const Types = useSelector((state) => state.temp)
     const history = useHistory()
     const pokemonsAll = useSelector((state) => state.dogs).map(e => e.name);
-    console.log(Types)
 
     const [input, setInput] = useState({
             nombre: "",

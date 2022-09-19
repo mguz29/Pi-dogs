@@ -1,14 +1,14 @@
 import React, { useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { GetNameDogs, setPage } from "../../actions";
 import style from "../SearchBar/SearchBar.module.css";
 import Swal from "sweetalert2";
 
 export default function SearchBar() {
   const [search, setSearch] = useState("");
-  const [msg, setMsg] = useState("");
+  const [ setMsg] = useState("");
   const dispatch = useDispatch();
-  const Dog = useSelector((state) => state.dogs);
+  // const Dog = useSelector((state) => state.dogs);
 
   function handleInputChange(e) {
     e.preventDefault();
@@ -45,7 +45,7 @@ export default function SearchBar() {
             placeholder="Example: Husky"
             onChange={(e) => handleInputChange(e)}
             onKeyUp={(e) => handleSearch(e)}
-            onke
+            
           />
         </div>
         <div>
