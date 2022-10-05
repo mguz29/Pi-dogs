@@ -44,3 +44,6 @@
     font-family: var( --fonts-) !important;
     font-weight: 900 !important;
 }
+.container{
+    background-image: url('../../Imagenes/FONDO2.png');
+}

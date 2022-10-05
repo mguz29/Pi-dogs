@@ -6,9 +6,12 @@
     flex-wrap: wrap;
     justify-content: space-evenly;
 }
+.Container{
+    background-image: url('../../Imagenes/FONDO2.png');
+}
 
 /* body{
-    background-image: url('../../Imagenes/FONDO2.png');
+    
 } */
 
 :root {
